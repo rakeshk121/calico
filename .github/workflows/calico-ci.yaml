@@ -1,0 +1,12 @@
+name: Calico CI
+on:
+  workflow_dispatch:
+jobs:
+  script:
+    runs-on: self-hosted
+    name: Build Calico images 
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Run make command
+        run: make image DEV_REGISTRY=my-registry IMAGETAG=coredge REGISTRY-BUILD_IMAGE-IMAGETAG=coredge
