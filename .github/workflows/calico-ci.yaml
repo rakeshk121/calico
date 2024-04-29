@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Installing make
-        run: sudo apt install make -y
+        run: sudo apt install make docker.io -y
         
       - name: Run make command
         run: make image DEV_REGISTRY=my-registry IMAGETAG=coredge REGISTRY-BUILD_IMAGE-IMAGETAG=coredge
