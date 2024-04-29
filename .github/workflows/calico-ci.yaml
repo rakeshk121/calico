@@ -8,6 +8,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Installing make
+        run: sudo apt install make -y
+        
       - name: Run make command
         run: make image DEV_REGISTRY=my-registry IMAGETAG=coredge REGISTRY-BUILD_IMAGE-IMAGETAG=coredge
 
